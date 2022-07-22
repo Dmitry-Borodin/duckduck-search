@@ -15,6 +15,7 @@
 		app:layout_constraintEnd_toEndOf="parent" />
 
 	<EditText
+		android:hint="@string/main_search_request_hint"
 		android:layout_width="0dp"
 		android:layout_height="48dp"
 		android:id="@+id/main_edittext"

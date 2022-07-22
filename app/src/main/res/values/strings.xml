@@ -1,4 +1,5 @@
 <resources>
 	<string name="app_name">DuckduckSearch</string>
 	<string name="main_search_cta">Search</string>
+	<string name="main_search_request_hint">Put search request here</string>
 </resources>
