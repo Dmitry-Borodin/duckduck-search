@@ -21,12 +21,16 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         editText.addTextChangedListener { validateSearchEnabled() }
-        cta.setOnClickListener { webview.loadUrl(DUCK_DUCK_SEARCH_URL+editText.text) }
+        cta.setOnClickListener { webview.loadUrl(DUCK_DUCK_SEARCH_URL + editText.text) }
     }
 
     override fun onStart() {
         super.onStart()
-        getClipboardText()?.let { editText.setText(it) } ?: editText.requestFocus()
+        getClipboardText()?.let {
+            editText.setText(it)
+            webview.loadUrl(DUCK_DUCK_SEARCH_URL + it)
+        }
+            ?: editText.requestFocus()
     }
 
     private fun validateSearchEnabled() {
